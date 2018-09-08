@@ -2,9 +2,10 @@
   "name": "drome",
   "version": "0.0.1",
   "description": "Zero-dependencies task runner",
-  "main": "index.js",
+  "main": "lib/drome.js",
+  "bin": "bin/drome.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/dromejs/drome/issues"
   },
-  "homepage": "https://github.com/dromejs/drome#readme"
+  "homepage": "https://github.com/dromejs/drome#readme",
+  "devDependencies": {
+    "jest": "^23.5.0"
+  }
 }

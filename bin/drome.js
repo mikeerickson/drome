@@ -10,7 +10,7 @@ try {
 } catch(e) {
     if (e.code == 'MODULE_NOT_FOUND') {
         console.log('There is no drome.config.js file in current directory');
-        return 0;
+        process.exit();
     }
 }
 

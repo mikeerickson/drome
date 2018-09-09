@@ -5,7 +5,8 @@
   "main": "lib/drome.js",
   "bin": "bin/drome.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint {bin,lib,test}/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/dromejs/drome#readme",
   "devDependencies": {
+    "eslint": "^5.5.0",
     "jest": "^23.5.0"
   },
   "jest": {

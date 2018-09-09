@@ -12,8 +12,8 @@ test('Drome run one task', () => {
         }
     }
 
-    drome(config, 'test');
-    expect(mockTask).toBeCalled();
+    drome(config, 'test')
+    expect(mockTask).toBeCalled()
 
 });
 

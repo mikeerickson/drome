@@ -27,7 +27,14 @@
   "jest": {
     "collectCoverage": true,
     "coverageReporters": [
-      "lcov"
+      "lcov",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "!**/coverage/**"
     ]
   }
 }

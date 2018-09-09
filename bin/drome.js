@@ -3,11 +3,17 @@
 const path = require('path');
 const drome = require('../lib/drome.js');
 const { args } = require('../lib/cli');
+let config;
 
-const config = path.join(path.relative(__dirname, './'), 'drome.config.js');
+try {
+    config = require(path.join(path.relative(__dirname, './'), 'drome.config.js'));
+} catch(e) {
+    if (e.code == 'MODULE_NOT_FOUND') {
+        console.log('There is no drome.config.js file in current directory');
+        return 0;
+    }
+}
 
-drome(
-    config(
-        args(process.argv).rest
-    )
-);
+drome(() => config(
+    args(process.argv).rest
+), args(process.argv).task);

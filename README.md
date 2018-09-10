@@ -3,18 +3,21 @@
 **Task runner which does 🚀 science for you**
 
 [![Build Status](https://travis-ci.org/dromejs/drome.svg?branch=master)](https://travis-ci.org/dromejs/drome) [![Coverage Status](https://coveralls.io/repos/github/dromejs/drome/badge.svg?branch=master)](https://coveralls.io/github/dromejs/drome?branch=master)
+[![install size](https://packagephobia.now.sh/badge?p=drome@0.2.0)](https://packagephobia.now.sh/result?p=drome@0.2.0)
 [![npm](https://img.shields.io/npm/v/drome.svg)](https://www.npmjs.com/package/drome)
 ![Licence](https://img.shields.io/github/license/dromejs/drome.svg)
 
-[![NPM](https://nodei.co/npm/drome.png)](https://nodei.co/npm/drome/)
-
 Built with ❤︎ by **[Konrad Przydział](https://twitter.com/kodipe)**
+
+## Introduction
+
+Drome project is my try to create JavaScript task runner which would be easy to use, lightweight, powerful and with well maintained ecosystem.
 
 ## Features
 
-- **zero-dependency:** doesn't need extra depedencies so it's lightweight
 - **easy to use:** define tasks using what you know already - command line statements or JavaScript functions
 - **agnostic:** it can be used with any bundlers, frameworks etc.
+- **zero-dependency:** doesn't need extra depedencies so it's lightweight
 
 ## Installation
 

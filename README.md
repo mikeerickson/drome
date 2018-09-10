@@ -13,7 +13,7 @@ Built with ❤︎ by **[Konrad Przydział](https://twitter.com/kodipe)**
 ## Features
 
 - **zero-dependency:** doesn't need extra depedencies so it's lightweight
-- **easy to use:** define tasks using command line statements or JavaScript functions
+- **easy to use:** define tasks using what you know already - command line statements or JavaScript functions
 - **agnostic:** it can be used with any bundlers, frameworks etc.
 
 ## Installation
@@ -31,7 +31,7 @@ module.exports = () => {
     return {
         tasks: {
             test: "npm test",
-            hello: () console.log('Hello World!')
+            hello: () => console.log('Hello World!')
         }
     }
 }
@@ -39,6 +39,8 @@ module.exports = () => {
 
 ## How to use
 
+If you would like to run `test` task from example above, run CLI:
+
 ```
-drome hello
+drome test
 ```

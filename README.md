@@ -47,3 +47,51 @@ If you would like to run `test` task from example above, run CLI:
 ```
 drome test
 ```
+
+## Parallel tasks
+
+If you would like to run tasks parallel, then you should use array in configuration:
+
+```js
+module.exports = () => {
+    return {
+        tasks: {
+            parallel: [
+                "npm test",
+                () => console.log('Hello World!')
+            ]
+        }
+    }
+}
+```
+And run:
+```
+drome parallel
+```
+
+## "Step by step" async tasks
+
+Sometimes you need to run tasks which are async but you need to do it "step by step". In this case you should use object notation to achieve that:
+
+```js
+module.exports = () => {
+    return {
+        tasks: {
+            stepByStep: {
+                task1: next => {
+                    // async job
+                    next();
+                },
+                task2: next => {
+                    // async job
+                    next();
+                }
+            }
+        }
+    }
+}
+```
+And run:
+```
+drome stepByStep
+```

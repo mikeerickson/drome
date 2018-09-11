@@ -1,2 +1,7 @@
 .github
 test
+coverage
+
+.travis.yml
+.eslintrc.js
+package-lock.json

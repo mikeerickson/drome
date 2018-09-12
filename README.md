@@ -15,83 +15,11 @@ Drome project is my try to create JavaScript task runner which would be easy to 
 
 ## Features
 
-- **easy to use:** define tasks using what you know already - command line statements or JavaScript functions
-- **agnostic:** it can be used with any bundlers, frameworks etc.
-- **zero-dependency:** doesn't need extra depedencies so it's lightweight
+- **Minimal abstraction:** You can define tasks with command line statements and Node.js APIs
+- **Independent:** Drome doesn't have dependencies - it's really light and can grow up in his own way
+- **Plug & play:** All Node packages are Drome ecosystem - you don't have to wait for plugin updates
 
-## Installation
+## Resources
 
-```
-npm install drome --save-dev
-```
-
-## Configuration
-
-Add `drome.config.js` file to your project with configuration:
-
-```js
-module.exports = () => {
-    return {
-        tasks: {
-            test: "npm test",
-            hello: () => console.log('Hello World!')
-        }
-    }
-}
-```
-
-## How to use
-
-If you would like to run `test` task from example above, run CLI:
-
-```
-drome test
-```
-
-## Parallel tasks
-
-If you would like to run tasks parallel, then you should use array in configuration:
-
-```js
-module.exports = () => {
-    return {
-        tasks: {
-            parallel: [
-                "npm test",
-                () => console.log('Hello World!')
-            ]
-        }
-    }
-}
-```
-And run:
-```
-drome parallel
-```
-
-## "Step by step" async tasks
-
-Sometimes you need to run tasks which are async but you need to do it "step by step". In this case you should use object notation to achieve that:
-
-```js
-module.exports = () => {
-    return {
-        tasks: {
-            stepByStep: {
-                task1: next => {
-                    // async job
-                    next();
-                },
-                task2: next => {
-                    // async job
-                    next();
-                }
-            }
-        }
-    }
-}
-```
-And run:
-```
-drome stepByStep
-```
+- [Documentation](https://drome.js.org/#docs)
+- [Blog](https://medium.com/drome)

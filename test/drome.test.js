@@ -57,29 +57,29 @@ test('Drome run async parallel tasks', () => {
     let config = () => {
         return {
             tasks: {
-                parallel: [
-                    next => {
+                parallel: {
+                    first: next => {
                         setTimeout(() => {
                             mockTask1();
                             order.push(1);
                             next();
                         }, 2000);
                     },
-                    next => {
+                    second: next => {
                         setTimeout(() => {
                             mockTask2();
                             order.push(2);
                             next();
                         }, 500);
                     },
-                    next => {
+                    third: next => {
                         setTimeout(() => {
                             mockTask3();
                             order.push(3);
                             next();
                         }, 1000);
                     }
-                ]
+                }
             }
         };
     };
@@ -93,7 +93,7 @@ test('Drome run async parallel tasks', () => {
     
 });
 
-test('Drome run async tasks step by step', () => {
+test('Drome run async tasks in sequence', () => {
 
     let order = [];
 
@@ -104,34 +104,34 @@ test('Drome run async tasks step by step', () => {
     let config = () => {
         return {
             tasks: {
-                stepByStep: {
-                    first: next => {
+                sequence: [
+                    next => {
                         setTimeout(() => {
                             mockTask1();
                             order.push(1);
                             next();
                         }, 2000);
                     },
-                    second: next => {
+                    next => {
                         setTimeout(() => {
                             mockTask2();
                             order.push(2);
                             next();
                         }, 1000);
                     },
-                    third: next => {
+                    next => {
                         setTimeout(() => {
                             mockTask3();
                             order.push(3);
                             next();
                         }, 500);
                     }
-                }
+                ]
             }
         };
     };
 
-    return drome(config, 'stepByStep').then(() => {
+    return drome(config, 'sequence').then(() => {
         expect(mockTask1).toBeCalled();
         expect(mockTask2).toBeCalled();
         expect(mockTask3).toBeCalled();
@@ -151,31 +151,31 @@ test('Drome run parallel - task and step by step stage', () => {
     let config = () => {
         return {
             tasks: {
-                firstLevel: [
-                    {
-                        first: next => {
+                firstLevel: {
+                    first: {
+                        subfirst: next => {
                             setTimeout(() => {
                                 mockTask1();
                                 order.push(1);
                                 next();
                             }, 500);
                         },
-                        second: next => {
+                        subsecond: next => {
                             setTimeout(() => {
                                 mockTask2();
                                 order.push(2);
                                 next();
-                            }, 1000);
+                            }, 2000);
                         }
                     },
-                    next => {
+                    second: next => {
                         setTimeout(() => {
                             mockTask3();
                             order.push(3);
                             next();
                         }, 1000);
                     }
-                ]
+                }
             }
         };
     };

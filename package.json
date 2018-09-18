@@ -36,10 +36,7 @@
       "html"
     ],
     "collectCoverageFrom": [
-      "**/*.js",
-      "!**/node_modules/**",
-      "!**/vendor/**",
-      "!**/coverage/**"
+      "lib/**/*.js"
     ]
   }
 }

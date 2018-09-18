@@ -188,3 +188,37 @@ test('Drome run parallel - task and step by step stage', () => {
     });
 
 });
+
+test('Drome should allow passing result to the next task in sequence', () => {
+
+    let result = 0;
+
+    let config = () => {
+        return {
+            tasks: {
+                sequence: [
+                    () => {
+                        return 1;
+                    },
+                    (next, prev) => {
+                        setTimeout(() => {
+                            next(prev + 1);
+                        }, 1000);
+                        return prev + 2;
+                    },
+                    (next, prev) => {
+                        setTimeout(() => {
+                            result = prev * 3;
+                            next(prev);
+                        }, 500);
+                    }
+                ]
+            }
+        };
+    };
+
+    return drome(config, 'sequence').then(() => {
+        expect(result).toBe(9);
+    });
+
+});

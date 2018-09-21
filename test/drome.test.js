@@ -27,6 +27,24 @@ test('Drome run one task', () => {
 
 });
 
+test('Drome handle undefined task', () => {
+
+    let mockTask = jest.fn();
+
+    let config = () => {
+        return {
+            tasks: {
+                test: mockTask
+            }
+        };
+    };
+
+    return drome(config, 'undefinedTask').catch(e => {
+        expect(e).toBe('Task \'undefinedTask\' is not defined');
+    });
+    
+});
+
 test('Drome run nested task', () => {
 
     let mockTask = jest.fn();

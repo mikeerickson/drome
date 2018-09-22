@@ -1,4 +1,13 @@
 node_modules
 coverage
 
+.vscode
+.idea
+
 package-lock.json
+
+
+# local files
+sandbox
+NOTES.md
+drome.config.js

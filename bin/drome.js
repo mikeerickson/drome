@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 const homedir = require('os').homedir();
 
-const drome = require('../lib/drome.js');
 const { args } = require('../lib/cli');
+const drome = require('../lib/drome.js');
 const { colors } = require('../lib/colors');
 
 let config;
@@ -23,7 +23,10 @@ let projectConfigPath = path.join(path.relative(__dirname, './'), 'drome.config.
 if (fs.existsSync(projectConfigPath)) {
     projectConfig = require(projectConfigPath);
 } else {
-    console.log(colors.yellow('Unable to locate project `drome.config.js` only global tasks will be available.'));
+    let msg = colors.yellow('\nUnable to locate project ');
+    msg += colors.magenta('drome.config.js');
+    msg += colors.yellow(', only global tasks will be available.\n');
+    console.log(msg);
 }
 
 config = () => {

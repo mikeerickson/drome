@@ -23,9 +23,9 @@ let projectConfigPath = path.join(path.relative(__dirname, './'), 'drome.config.
 if (fs.existsSync(projectConfigPath)) {
     projectConfig = require(projectConfigPath);
 } else {
-    let msg = colors.yellow('\nUnable to locate project ');
-    msg += colors.magenta('drome.config.js');
-    msg += colors.yellow(', only global tasks will be available.\n');
+    let msg = colors.red('\n✖');
+    msg += colors.yellow(' Unable to locate project ');
+    msg += colors.magenta('drome.config.js\n');
     console.log(msg);
 }
 

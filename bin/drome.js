@@ -15,6 +15,9 @@ let projectConfig = () => { return { tasks: {} }; };
 let homeConfigPath = path.join(homedir, 'drome.config.js');
 if (fs.existsSync(homeConfigPath)) {
     homeConfig = require(homeConfigPath);
+} else {
+    fs.copyFileSync(path.join(__dirname, './default.drome.config.js'), homeConfigPath);
+    homeConfig = require(homeConfigPath);
 }
 
 let projectConfigPath = path.join(path.relative(__dirname, './'), 'drome.config.js');
@@ -23,9 +26,9 @@ let projectConfigPath = path.join(path.relative(__dirname, './'), 'drome.config.
 if (fs.existsSync(projectConfigPath)) {
     projectConfig = require(projectConfigPath);
 } else {
-    let msg = colors.red('\n✖');
-    msg += colors.yellow(' Unable to locate project ');
-    msg += colors.magenta('drome.config.js\n');
+    let msg = colors.white('\n🚫 Project configuration file ');
+    msg += colors.magenta('drome.config.js');
+    msg += colors.white(' does not exist\n');
     console.log(msg);
 }
 
@@ -37,4 +40,4 @@ config = () => {
 
 drome(() => config(
     args(process.argv).rest
-), args(process.argv).task, args(process.argv).rest);
+), args(process.argv).cmd, args(process.argv).task, args(process.argv).rest);

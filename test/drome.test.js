@@ -39,7 +39,7 @@ test('Drome handle undefined task', () => {
         };
     };
 
-    return drome(config, 'undefinedTask').catch(e => {
+    return drome(config, 'run', 'undefinedTask').catch(e => {
         expect(e).toBe('Task \'undefinedTask\' is not defined');
     });
     

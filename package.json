@@ -1,6 +1,6 @@
 {
   "name": "drome",
-  "version": "0.3.0",
+  "version": "0.3.0-pr.016",
   "description": "Zero-dependencies task runner",
   "main": "lib/drome.js",
   "bin": "bin/drome.js",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/dromejs/drome#readme",
   "devDependencies": {
+    "dumper.js": "1.1.1",
     "eslint": "^5.5.0",
     "jest": "^23.5.0"
   },

@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/dromejs/drome#readme",
   "devDependencies": {
-    "dumper.js": "1.1.1",
     "eslint": "^5.5.0",
     "jest": "^23.5.0"
   },

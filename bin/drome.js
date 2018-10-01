@@ -13,6 +13,7 @@ let homeConfig = () => { return { tasks: {} }; };
 let projectConfig = () => { return { tasks: {} }; };
 
 let homeConfigPath = path.join(homedir, 'drome.config.js');
+
 if (fs.existsSync(homeConfigPath)) {
     homeConfig = require(homeConfigPath);
 } else {
@@ -20,7 +21,7 @@ if (fs.existsSync(homeConfigPath)) {
     homeConfig = require(homeConfigPath);
 }
 
-let projectConfigPath = path.join(path.relative(__dirname, './'), 'drome.config.js');
+let projectConfigPath = path.join(path.resolve('./'), 'drome.config.js');
 // projectConfigPath = './drome.config.js'; // this is only used when debugging
 
 if (fs.existsSync(projectConfigPath)) {

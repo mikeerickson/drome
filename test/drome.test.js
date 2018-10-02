@@ -42,7 +42,7 @@ test('Drome handle undefined task', () => {
     return drome(config, 'run', 'undefinedTask').catch(e => {
         expect(e).toBe('Task \'undefinedTask\' is not defined');
     });
-
+    
 });
 
 test('Drome run nested task', () => {
@@ -108,7 +108,7 @@ test('Drome run async parallel tasks', () => {
         expect(mockTask3).toBeCalled();
         expect(order).toEqual([2, 3, 1]);
     });
-
+    
 });
 
 test('Drome run async tasks in sequence', () => {

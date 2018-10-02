@@ -1,7 +1,11 @@
 .github
 test
 coverage
+node_modules
 
-.travis.yml
 .eslintrc.js
+.gitignore
+.npmignore
+.travis.yml
+drome.config.js
 package-lock.json

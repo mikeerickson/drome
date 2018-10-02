@@ -1,5 +1,21 @@
 # Drome Changelog
 
+## 0.4.0 (2018-10-02)
+
+#### 🚀 New Feature
+
+- `run`, `help` and `version` commands in CLI
+- Global config support
+- Silent mode
+- Passing results to the next task in sequence
+- Better logs
+
+#### 🐞 Bugfix
+
+- Proper exit code on tasks failure
+- Allow run local packages
+- Fixed `.npmignore` file for smaller release
+
 ## 0.3.0 (2018-09-11)
 
 #### 🚀 New Feature

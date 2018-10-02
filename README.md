@@ -3,7 +3,7 @@
 **Task runner which does 🚀 science for you**
 
 [![Build Status](https://travis-ci.org/dromejs/drome.svg?branch=master)](https://travis-ci.org/dromejs/drome) [![Coverage Status](https://coveralls.io/repos/github/dromejs/drome/badge.svg?branch=master)](https://coveralls.io/github/dromejs/drome?branch=master)
-[![install size](https://packagephobia.now.sh/badge?p=drome@0.2.0)](https://packagephobia.now.sh/result?p=drome@0.2.0)
+[![install size](https://packagephobia.now.sh/badge?p=drome)](https://packagephobia.now.sh/result?p=drome@0.2.0)
 [![npm](https://img.shields.io/npm/v/drome.svg)](https://www.npmjs.com/package/drome)
 ![Licence](https://img.shields.io/github/license/dromejs/drome.svg)
 

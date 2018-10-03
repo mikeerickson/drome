@@ -21,5 +21,5 @@ Drome project is my try to create JavaScript task runner which would be easy to 
 
 ## Resources
 
-- [Documentation](https://drome.js.org/#docs)
+- [Documentation](https://drome.js.org/docs/installation)
 - [Blog](https://medium.com/drome)

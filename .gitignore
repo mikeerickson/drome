@@ -11,3 +11,4 @@ package-lock.json
 sandbox
 NOTES.md
 drome.config.js
+*.log

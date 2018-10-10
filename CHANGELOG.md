@@ -6,6 +6,10 @@
 
 - Shell tab completion support
 
+#### ⚙️ Maintenance
+
+- Added `husky` for git hooks
+
 ## 0.4.0 (2018-10-02)
 
 #### 🚀 New Feature

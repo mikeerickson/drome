@@ -7,6 +7,7 @@ const homedir = require('os').homedir();
 const { args } = require('../lib/cli');
 const drome = require('../lib/drome.js');
 const { colors } = require('../lib/colors');
+const completion = require('../lib/completion');
 
 let config;
 let homeConfig = () => { return { tasks: {} }; };
@@ -39,6 +40,10 @@ config = () => {
     };
 };
 
-drome(() => config(
-    args(process.argv).rest
-), args(process.argv).cmd, args(process.argv).task, args(process.argv).rest);
+const { cmd, task, rest } = args(process.argv);
+
+if(cmd == 'completion') {
+    completion.print({cmd, task, rest, config : config(rest)});
+} else {
+    drome(() => config(rest), cmd, task, rest);
+}

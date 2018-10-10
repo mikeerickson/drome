@@ -20,6 +20,6 @@ if type complete &>/dev/null; then
       __ltrim_colon_completions "${words[cword]}"
     fi
   }
-  complete -o default -F _drome_completion drome
+  complete -o bashdefault -o default -o nospace -F _drome_completion drome
 fi
 ###-end-drome-completion-###

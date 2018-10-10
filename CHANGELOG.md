@@ -1,6 +1,6 @@
 # Drome Changelog
 
-## 0.5.0-alpha.3 (2018-10-02)
+## 0.5.0-alpha.3 (2018-10-10)
 
 #### 🚀 New Feature
 

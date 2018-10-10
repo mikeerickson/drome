@@ -5,6 +5,7 @@
   "main": "lib/drome.js",
   "bin": "bin/drome.js",
   "scripts": {
+    "postinstall": "node scripts/post-install.js",
     "test": "jest",
     "lint": "eslint {bin,lib,test}/**/*.js"
   },

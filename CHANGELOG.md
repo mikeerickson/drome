@@ -1,5 +1,11 @@
 # Drome Changelog
 
+## 0.5.0-alpha.3 (2018-10-02)
+
+#### 🚀 New Feature
+
+- Shell tab completion support
+
 ## 0.4.0 (2018-10-02)
 
 #### 🚀 New Feature

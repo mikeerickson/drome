@@ -1,6 +1,6 @@
 {
   "name": "drome",
-  "version": "0.4.1",
+  "version": "0.5.0-alpha.4",
   "description": "Zero-dependencies task runner",
   "main": "lib/drome.js",
   "bin": "bin/drome.js",

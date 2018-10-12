@@ -12,6 +12,7 @@ const completion = require('../lib/completion');
 let config;
 let homeConfig = () => { return { tasks: {} }; };
 let projectConfig = () => { return { tasks: {} }; };
+let packageConfig = () => { return { tasks: {} }; };
 
 let homeConfigPath = path.join(homedir, 'drome.config.js');
 
@@ -34,16 +35,23 @@ if (fs.existsSync(projectConfigPath)) {
     console.log(msg);
 }
 
+let packageConfigPath = path.join(path.resolve('./'), 'package.json');
+if (fs.existsSync(packageConfigPath)) {
+    const packageScripts = require(packageConfigPath).scripts;
+    packageConfig = () => { return { tasks: packageScripts }; };
+}
+
+
 config = () => {
     return {
-        tasks: Object.assign(homeConfig().tasks, projectConfig().tasks)
+        tasks: Object.assign(homeConfig().tasks, projectConfig().tasks, packageConfig().tasks)
     };
 };
 
 const { cmd, task, rest } = args(process.argv);
 
-if(cmd == 'completion') {
-    completion.print({cmd, task, rest, config : config(rest)});
+if (cmd == 'completion') {
+    completion.print({ cmd, task, rest, config: config(rest) });
 } else {
     drome(() => config(rest), cmd, task, rest);
 }

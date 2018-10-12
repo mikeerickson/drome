@@ -1,5 +1,11 @@
 # Drome Changelog
 
+## 0.4.1 (2018-10-12)
+
+#### 🐞 Bugfix
+
+- Fix of local module path resolving
+
 ## 0.5.0-alpha.3 (2018-10-10)
 
 #### 🚀 New Feature

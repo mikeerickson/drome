@@ -8,6 +8,7 @@ const { args } = require('../lib/cli');
 const drome = require('../lib/drome.js');
 const { colors } = require('../lib/colors');
 const completion = require('../lib/completion');
+const { cmd, task, rest } = args(process.argv);
 
 let config;
 let homeConfig = () => { return { tasks: {} }; };
@@ -29,10 +30,12 @@ let projectConfigPath = path.join(path.resolve('./'), 'drome.config.js');
 if (fs.existsSync(projectConfigPath)) {
     projectConfig = require(projectConfigPath);
 } else {
-    let msg = colors.white('\n🚫 Project configuration file ');
-    msg += colors.magenta('drome.config.js');
-    msg += colors.white(' does not exist\n');
-    console.log(msg);
+    if (cmd !== 'init') {
+        let msg = colors.white('\n 🚫  Project configuration file ');
+        msg += colors.magenta('drome.config.js');
+        msg += colors.white(' does not exist\n');
+        console.log(msg);
+    }
 }
 
 let packageConfigPath = path.join(path.resolve('./'), 'package.json');
@@ -48,7 +51,6 @@ config = () => {
     };
 };
 
-const { cmd, task, rest } = args(process.argv);
 
 if (cmd == 'completion') {
     completion.print({ cmd, task, rest, config: config(rest) });
